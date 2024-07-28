@@ -9,5 +9,14 @@
 
     apps.x86_64-linux.default = { type = "app"; program = "${nixpkgs.legacyPackages.x86_64-linux.hello}/bin/hello"; };
 
+    nixosModules.cronJob = { lib }: {
+      options = {
+        adsf = lib.options.mkOption {
+          type = lib.types.str;
+          default = "hi";
+        };
+      };
+    };
+
   };
 }
